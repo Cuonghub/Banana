@@ -1325,8 +1325,8 @@ end
 print("--[[Loaded UI]]--")
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 Window = Fluent:CreateWindow({
-    Title = "Banana Cat Hub - BloxFruit ",
-    SubTitle = "By Obii",
+    Title = "Banana Cat Hub-Blox Fruit",
+    SubTitle = "by macuongdz ",
     TabWidth = 155,
     Size = UDim2.fromOffset(500, 350),
     Acrylic = false, 
@@ -8062,7 +8062,7 @@ Frame.BorderColor3 = Color3.fromRGB(27, 42, 53)
 Frame.BorderSizePixel = 1
 Frame.Position = UDim2.new(0, 20, 0.1, -6)  
 Frame.Size = UDim2.new(0, 50, 0, 50)
-Frame.Name = "dut dit"
+Frame.Name = "BananaHubCuongDz"
 
 ImageLabel.Parent = Frame
 ImageLabel.Name = "Banana Test"
