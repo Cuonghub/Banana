@@ -5028,6 +5028,13 @@ Blog:AddParagraph({
     Title = "Raids",
     Content = string.rep("-", 21)
 })
+Blog:AddButton({
+    Title="Banana Cat Hub V2 Support Raids",
+    Description="",
+    Callback=function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/Cuonghub/Banana/refs/heads/main/BananaMenuV2.txt"))()
+  end
+})
 Dropdown = Blog:AddDropdown("Dropdown", {
     Title = "Select Raid",
     Values = {
@@ -6547,9 +6554,9 @@ spawn(function()
     end
 end)
 Race:AddButton({
-    Title= "Auto Fly Gui",
+    Title= "Fly Up Draco V4 By MaCuongDz",
     Callback=function()
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/Cuonghub/MenuGuiFly_DracoV4/refs/heads/main/FlyGuiUpDracoV4.txt"))()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/Cuonghub/FlyGuiAllGame/refs/heads/main/FlyUpDracoV4.txt"))()
   end
 })
 Race:AddParagraph({
