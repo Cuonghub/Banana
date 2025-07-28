@@ -5047,132 +5047,18 @@ Dropdown = Blog:AddDropdown("Dropdown", {
 Dropdown:OnChanged(function(Value)
     getgenv().SelectChip = Value
 end)
-Toggle = Blog:AddToggle("Toggle", {Title = "Get Fruit In Inventory Low Beli", Default = false})
-Toggle:OnChanged(function(Value)
-    getgenv().AutoGetFruit = Value
-end)
-spawn(function()
-    while task.wait(.1) do
-        pcall(function()
-            if getgenv().AutoGetFruit then
-                local fruits = {"Rocket-Rocket", "Spin-Spin", "Chop-Chop", "Spring-Spring", "Bomb-Bomb", "Smoke-Smoke", 
-                                "Spike-Spike", "Flame-Flame", "Falcon-Falcon", "Ice-Ice", "Sand-Sand", "Dark-Dark", 
-                                "Ghost-Ghost", "Diamond-Diamond", "Light-Light", "Rubber-Rubber", "Barrier-Barrier"}
-
-                for _, fruit in ipairs(fruits) do
-                    local args = {
-                        [1] = "LoadFruit",
-                        [2] = fruit
-                    }
-                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-                end
-            end
-        end)
-    end
-end)
-Toggle = Blog:AddToggle("Toggle", {Title = "Auto Raid", Default = false})
-Toggle:OnChanged(function(Value)
-    getgenv().Auto_Dungeon = Value
-end)
-spawn(function()
-    while task.wait(1) do
-        if getgenv().Auto_Dungeon then
-            if not game.Players.LocalPlayer.PlayerGui.Main.TopHUDList.RaidTimer.Visible == false then
-                local islands = {"Island 5", "Island 4", "Island 3", "Island 2", "Island 1"}
-                for _, island in ipairs(islands) do
-                    local location = game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild(island)
-                    if location then
-                        topos(location.CFrame * CFrame.new(0, 70, 100))
-                        break
-                    end
-                end
-            end
-        end
-    end
-end)
-spawn(function()
-    while task.wait(1) do
-        pcall(function()
-            if getgenv().Auto_Dungeon then
-                if game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Timer.Visible == false then
-                    local specialMicrochip = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Special Microchip") 
-                                            or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Special Microchip")
-                    if specialMicrochip then
-                        if World2 then
-                            fireclickdetector(game:GetService("Workspace").Map.CircleIsland.RaidSummon2.Button.Main.ClickDetector)
-                        elseif World3 then
-                            fireclickdetector(game:GetService("Workspace").Map["Boat Castle"].RaidSummon2.Button.Main.ClickDetector)
-                        end
-                    end
-                end
-            end
-        end)
-    end
-end)
-spawn(function()
-    while task.wait(1) do
-        if getgenv().Auto_Dungeon then
-            for i, v in pairs(game.Workspace.Enemies:GetDescendants()) do
-                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                    pcall(function()
-                        repeat task.wait(.001)
-                            v.Humanoid.Health = 0
-                            v.HumanoidRootPart.CanCollide = false
-                            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
-                        until not getgenv().Auto_Dungeon or not v.Parent or v.Humanoid.Health <= 0
-                    end)
-                end
-            end
-        end
-    end
-end)
-spawn(function()
-    while task.wait(1) do
-        if getgenv().Auto_Dungeon then
-            pcall(function()
-                local args = {
-                    [1] = "RaidsNpc",
-                    [2] = "Select",
-                    [3] = getgenv().SelectChip
-                }
-                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-            end)
-        end
-    end
-end)
-spawn(function()
-    while wait(1) do
-        pcall(function()
-            if getgenv().Auto_Dungeon then
-                if game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Timer.Visible == false then
-                    local specialMicrochip = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Special Microchip") 
-                                            or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Special Microchip")
-                    if specialMicrochip then
-                        if World2 then
-                            fireclickdetector(game:GetService("Workspace").Map.CircleIsland.RaidSummon2.Button.Main.ClickDetector)
-                        elseif World3 then
-                            fireclickdetector(game:GetService("Workspace").Map["Boat Castle"].RaidSummon2.Button.Main.ClickDetector)
-                        end
-                    end
-                end
-            end
-        end)
-    end
-end)
-Toggle = Blog:AddToggle("Toggle", {Title = "Auto Awaken Fruit", Default = false})
-Toggle:OnChanged(function(Value)
-    getgenv().AutoAwaken = Value
-end)
-spawn(function()
-    pcall(function()
-        while wait(1) do
-            if getgenv().AutoAwaken then
-                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Awakener", "Check")
-                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Awakener", "Awaken")
-            end
-        end
-    end)
-end)
+Blog:AddParagraph({
+    Title="Buy Chip",
+    Content="Support in Banana Cat Hub Menu V2"
+})
+Blog:AddParagraph({
+    Title="Auto Raid",
+    Content="Support in Banana Cat Hub Menu V2"
+})
+Blog:AddParagraph({
+    Title="Auto Awakening Fruit",
+    Content="Support in Banana Cat Hub Menu V2"
+})
 if World2 then
 Blog:AddButton({
     Title = "Teleport To Lab",
