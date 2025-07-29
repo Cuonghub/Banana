@@ -176,7 +176,7 @@ hookfunction(require(game:GetService("ReplicatedStorage").Effect.Container.Respa
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 Window = Fluent:CreateWindow({
     Title = "Banana Cat Hub V2 Support",
-    SubTitle="Blox Fruits", 
+    SubTitle="by macuongdz", 
     TabWidth=155, 
     Theme="Dark",
     Acrylic=false,
@@ -2714,7 +2714,7 @@ spawn(function()
                 local CFrameTarget = CFrame.new(BushPosition)
                 Tween2(CFrameTarget)
                 Fluent:Notify({
-                    Title = "CuongHub",
+                    Title = "Banana Cat Hub V2 Support",
                     Content = "Find Berry: " .. tostring(BerryName),
                     Duration = 10
                 })
@@ -4109,7 +4109,7 @@ local function createToggle(title, toggleKey, islands, islandName, notification)
             _G[toggleKey] = false
             if not notified then
                 Fluent:Notify({
-                    Title = "CuongHub",
+                    Title = "Banana Cat Hub V2 Support",
                     Content = notification,
                     Duration = 10
                 })
@@ -9329,7 +9329,7 @@ local notificationCooldown = 10
 local currentTime = tick()
 if currentTime - lastNotificationTime >= notificationCooldown then
     game.StarterGui:SetCore("SendNotification", {
-        Title = "CuongHub",
+        Title = "Banana Cat Hub V2 Support",
         Text = "Successfully",
         Duration = 1
     })
