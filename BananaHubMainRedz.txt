@@ -2564,7 +2564,7 @@ local credits = Discord:AddParagraph({
     Title = "Credits For Someone Peoples",
     Desc = ""
 })
-credits:SetDesc("nigth mystic, astral, tboy kiddo etc")
+credits:SetDesc("Cuong Meo")
 
 Shop:AddSection("Fighting Shop")
 Shop:AddButton({
